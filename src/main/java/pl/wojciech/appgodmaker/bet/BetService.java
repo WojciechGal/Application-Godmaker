@@ -37,17 +37,17 @@ public class BetService {
         betRepository.save(bet);
     }
 
-    public List<Bet> getAllBets() {
-        return betRepository.findAll();
-    }
-
-    public void deleteBet(Long id) {
-        betRepository.deleteById(id);
-    }
-
-    public Bet findBetById(Long id) {
-        return betRepository.findById(id).orElse(null);
-    }
+//    public List<Bet> getAllBets() {
+//        return betRepository.findAll();
+//    }
+//
+//    public void deleteBet(Long id) {
+//        betRepository.deleteById(id);
+//    }
+//
+//    public Bet findBetById(Long id) {
+//        return betRepository.findById(id).orElse(null);
+//    }
 
     public List<Bet> getBetsByUserId(Long id) {
         return betRepository.findAllByUserId(id);

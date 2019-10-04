@@ -13,14 +13,6 @@ import pl.wojciech.appgodmaker.user.SpringDataUserDetailsService;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-//    @Override
-//    public void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication()
-//                .withUser("user1").password("{noop}user123").roles("USER")
-//                .and()
-//                .withUser("admin1").password("{noop}admin123").roles("ADMIN");
-//    }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
@@ -37,8 +29,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().logout().logoutSuccessUrl("/")
                 .permitAll()
                 .and().exceptionHandling().accessDeniedPage("/403");
-        //14 slajd - rozbudowanie
-        //18 slajd można w konkretnym kontrolerze a nawet metodzie dodać zabezpieczenie i akcji kontrolera
     }
 
     @Bean

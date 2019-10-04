@@ -7,8 +7,6 @@ import pl.wojciech.appgodmaker.user.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -19,18 +17,18 @@ public class Bet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "Podaj prawidłowe dane")
-    @Min(value = 1, message = "Podaj prawidłową kwotę")
+    @NotNull(message = "Pole nie może być puste")
+    @Min(value = 1, message = "Musisz obstawić co najmniej 1 zł")
     private Double cashDeposit;
 
     @ManyToOne(fetch = FetchType.EAGER)//niebezpieczne
     private User user;
 
-    @NotNull(message = "Podaj prawidłowe dane")
+    @NotNull(message = "Pole nie może być puste")
     @ManyToOne(fetch = FetchType.EAGER)//niebezpieczne
     private Match match;
 
-    @NotNull(message = "Podaj prawidłowe dane")
+    @NotNull(message = "Pole nie może być puste")
     @Range(min = 0, max = 2)
     private Integer kindOfBet;
 
@@ -83,14 +81,5 @@ public class Bet {
 
     public void setKindOfBet(Integer kindOfBet) {
         this.kindOfBet = kindOfBet;
-    }
-
-    @Override
-    public String toString() {
-        return "Bet{" +
-                "cashDeposit=" + cashDeposit +
-                ", user=" + user.getUsername() +
-                ", match=" + match +
-                '}';
     }
 }

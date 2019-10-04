@@ -8,8 +8,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebAppConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        //registry.addViewController("/login").setViewName("admin/login");
-        //ta metoda jest nadmiarowa chyba bo /login i tak przekierowuje do admin/login
         registry.addViewController("/403").setViewName("admin/403");//albo może też byc akcja
     }
 }
