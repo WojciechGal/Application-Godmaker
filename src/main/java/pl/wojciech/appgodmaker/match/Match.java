@@ -24,22 +24,22 @@ public class Match {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Podaj prawidłowe dane")
+    @NotBlank(message = "Pole nie może być puste")
     private String homeTeam;
 
-    @NotBlank(message = "Podaj prawidłowe dane")
+    @NotBlank(message = "Pole nie może być puste")
     private String awayTeam;
 
-    @NotNull(message = "Podaj prawidłowe dane")
-    @Min(value = 1, message = "Podaj poprawną liczbę")
+    @NotNull(message = "Wprowadź wartość")
+    @Min(value = 1, message = "Kurs musi wynosić co najmniej jeden")
     private Double homeCourse;
 
-    @NotNull(message = "Podaj prawidłowe dane")
-    @Min(value = 1, message = "Podaj poprawną liczbę")
+    @NotNull(message = "Wprowadź wartość")
+    @Min(value = 1, message = "Kurs musi wynosić co najmniej jeden")
     private Double drawCourse;
 
-    @NotNull(message = "Podaj prawidłowe dane")
-    @Min(value = 1, message = "Podaj poprawną liczbę")
+    @NotNull(message = "Wprowadź wartość")
+    @Min(value = 1, message = "Kurs musi wynosić co najmniej jeden")
     private Double awayCourse;
 
     @NotNull(message = "Podaj prawidłową datę")
@@ -170,16 +170,4 @@ public class Match {
         return homeTeam + ":" + awayTeam;
     }
 
-    @Override
-    public String toString() {
-        return "Match{" +
-                "homeTeam='" + homeTeam + '\'' +
-                ", awayTeam='" + awayTeam + '\'' +
-                ", homeCourse=" + homeCourse +
-                ", drawCourse=" + drawCourse +
-                ", awayCourse=" + awayCourse +
-                ", homeGoals=" + homeGoals +
-                ", awayGoals=" + awayGoals +
-                '}';
-    }
 }

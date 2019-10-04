@@ -17,18 +17,18 @@ public class Bet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "Pole nie może być puste")
+    @NotNull(message = "Wprowadź wartość")
     @Min(value = 1, message = "Musisz obstawić co najmniej 1 zł")
     private Double cashDeposit;
 
     @ManyToOne(fetch = FetchType.EAGER)//niebezpieczne
     private User user;
 
-    @NotNull(message = "Pole nie może być puste")
+    @NotNull(message = "Wprowadź wartość")
     @ManyToOne(fetch = FetchType.EAGER)//niebezpieczne
     private Match match;
 
-    @NotNull(message = "Pole nie może być puste")
+    @NotNull(message = "Wprowadź wartość")
     @Range(min = 0, max = 2)
     private Integer kindOfBet;
 
