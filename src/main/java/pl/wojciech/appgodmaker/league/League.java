@@ -25,7 +25,6 @@ public class League {
 
     //możliwa jeszcze lista zespołów
 
-
     public Long getId() {
         return id;
     }
@@ -50,10 +49,4 @@ public class League {
         this.rounds = rounds;
     }
 
-    @Override
-    public String toString() {
-        return "League{" +
-                "name='" + name + '\'' +
-                '}';
-    }
 }
