@@ -11,9 +11,6 @@ import pl.wojciech.appgodmaker.round.RoundService;
 
 
 import javax.validation.Valid;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -79,9 +76,9 @@ public class MatchController {
 
 ////////////////////////CZAS//////////////////////////
 
-//        if (dateNow.after(dateMatch)) {
-//            return "wrongHour";
-//        }
+        if (dateNow.after(dateMatch)) {
+            return "wrongHour";
+        }
         ////////////////////////////////////////////////
 
 
@@ -91,39 +88,7 @@ public class MatchController {
         return "redirect:/matches/check/" + match.getRound().getId();
     }
 
-//    @GetMapping(value = "/all")
-//    public String getAllMatches(Model model) {
-//        List<Match> matches = matchService.getAllMatches();
-//        model.addAttribute("matches", matches);
-//        return "matchList";
-//    }
-//
-//    @GetMapping(value = "/update/{id}")
-//    public String updateMatch(@PathVariable Long id, Model model) {
-//        Match match = matchService.findMatchById(id);
-//        model.addAttribute("match", match);
-//        return "match";
-//    }
-//
-//    @PostMapping("/update/{id}")
-//    public String updateMatch(@Valid Match match, BindingResult result) {
-//        if (result.hasErrors()) {
-//            return "match";
-//        }
-//        matchService.saveMatch(match);
-//        return "redirect:/matches/all";
-//    }
-//
-//    @GetMapping(value = "/delete/{id}")
-//    public String deleteMatch(@PathVariable Long id) {
-//        matchService.deleteMatch(id);
-//        return "redirect:/matches/all";
-//    }
-//
-//    @ModelAttribute("rounds")
-//    public List<Round> getRounds() {
-//        return roundService.getAllRounds();
-//    }
+
 
 
     @GetMapping(value = "/bigupdate/{idOf}")
@@ -173,9 +138,9 @@ public class MatchController {
 ////////////////////////CZAS///////////////////////
 
 
-//        if (dateNow.before(dateMatch)) {
-//            return "wrongHour";
-//        }
+        if (dateNow.before(dateMatch)) {
+            return "wrongHour";
+        }
 
 
 
@@ -206,4 +171,38 @@ public class MatchController {
         model.addAttribute("matches", matchService.getAllMatches());
         return "matchList2";
     }
+
+    //    @GetMapping(value = "/all")
+//    public String getAllMatches(Model model) {
+//        List<Match> matches = matchService.getAllMatches();
+//        model.addAttribute("matches", matches);
+//        return "matchList";
+//    }
+//
+//    @GetMapping(value = "/update/{id}")
+//    public String updateMatch(@PathVariable Long id, Model model) {
+//        Match match = matchService.findMatchById(id);
+//        model.addAttribute("match", match);
+//        return "match";
+//    }
+//
+//    @PostMapping("/update/{id}")
+//    public String updateMatch(@Valid Match match, BindingResult result) {
+//        if (result.hasErrors()) {
+//            return "match";
+//        }
+//        matchService.saveMatch(match);
+//        return "redirect:/matches/all";
+//    }
+//
+//    @GetMapping(value = "/delete/{id}")
+//    public String deleteMatch(@PathVariable Long id) {
+//        matchService.deleteMatch(id);
+//        return "redirect:/matches/all";
+//    }
+//
+//    @ModelAttribute("rounds")
+//    public List<Round> getRounds() {
+//        return roundService.getAllRounds();
+//    }
 }

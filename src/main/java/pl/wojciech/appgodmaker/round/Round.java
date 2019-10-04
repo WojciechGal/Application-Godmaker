@@ -19,8 +19,8 @@ public class Round {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "Podaj prawidłowe dane")
-    @Min(value = 1, message = "Podaj prawidłowy numer")
+    @NotNull(message = "Podaj wartość")
+    @Min(value = 1, message = "Numer kolejki musi wynosić co najmniej 1")
     private Integer number;
 
     @NotNull
@@ -61,13 +61,6 @@ public class Round {
 
     public void setMatches(List<Match> matches) {
         this.matches = matches;
-    }
-
-    @Override
-    public String toString() {
-        return "Round{" +
-                "number=" + number +
-                '}';
     }
 
     public String getFullData() {
