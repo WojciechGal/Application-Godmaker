@@ -18,31 +18,4 @@ public class HomeController {
     public String welcomePage() {
         return "home";
     }
-
-    @GetMapping("/forlogged")
-    @ResponseBody
-    public String forLogged() {
-        return "Strona dla zalogowanych";
-    }
-
-    @GetMapping("/foradmin")
-    @ResponseBody
-    public String forAdmin() {
-        return "Strona dla adminów";
-    }
-
-    @GetMapping("/checkX")
-    @ResponseBody
-    public String userInfo(@AuthenticationPrincipal UserDetails customUser) {
- //       log.info("customUsSer class {} " , customUser.getClass());
-        return "You are logged as " + customUser;
-    }
-
-    @GetMapping("/check")
-    @ResponseBody
-    public String admin(@AuthenticationPrincipal CurrentUser customUser) {
-        User entityUser = customUser.getUser();
-        return "Hello " + entityUser.getUsername();
-    }
-
 }
