@@ -82,6 +82,11 @@ public class MatchService {
 
         });
 
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(match.getStartDate());
+        cal.set(Calendar.HOUR_OF_DAY, 12);
+        match.setStartDate(cal.getTime());
+
         matchRepository.save(match);
     }
 
@@ -94,7 +99,14 @@ public class MatchService {
     }
 
     public Match findMatchById(Long id) {
-        return matchRepository.findById(id).orElse(null);
+        Match match = matchRepository.findById(id).orElse(null);
+
+//        Calendar cal = Calendar.getInstance();
+//        cal.setTime(match.getStartDate());
+//        cal.set(Calendar.HOUR_OF_DAY, 12);
+//        match.setStartDate(cal.getTime());
+
+        return match;
     }
 
     public List<Match> findMatchByRound(Long id) {
