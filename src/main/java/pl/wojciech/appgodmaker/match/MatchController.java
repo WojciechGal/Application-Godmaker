@@ -111,9 +111,11 @@ public class MatchController {
             FieldError err = new FieldError("match","awayGoals","Podaj prawidłowe dane");
             result.addError(err);
         }
+
         if (result.hasErrors()) {
             return "matchUp";
         }
+
 
         Date dateNow = new Date();
 
@@ -139,8 +141,12 @@ public class MatchController {
 
 
         if (dateNow.before(dateMatch)) {
-            return "wrongHour";
+            return "redirect:/matches/bigupdate/" + match.getId() + "?wrongHour=true";
         }
+
+
+
+
 
 
 
