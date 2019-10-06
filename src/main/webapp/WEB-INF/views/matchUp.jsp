@@ -29,52 +29,55 @@
 
     <form:form method="post" modelAttribute="match">
 
-    <div class="card text-center">
-        <div class="card-body">
-            <p>${match.homeTeam} vs. ${match.awayTeam}</p>
+        <div class="card text-center">
+            <div class="card-body">
+                <p>${match.homeTeam} vs. ${match.awayTeam}</p>
+            </div>
         </div>
-    </div>
 
 
+        <div class="card mt-4 text-center">
+            <div class="card-body">
 
 
+                <form:hidden path="id" value="${match.id}"/>
+                <form:hidden path="homeTeam" value="${match.homeTeam}"/>
+                <form:hidden path="awayTeam" value="${match.awayTeam}"/>
+                <form:hidden path="homeCourse" value="${match.homeCourse}"/>
+                <form:hidden path="drawCourse" value="${match.drawCourse}"/>
+                <form:hidden path="awayCourse" value="${match.awayCourse}"/>
 
-    <div class="card mt-4 text-center">
-        <div class="card-body">
+                <form:input path="startDate" type="date" cssStyle="display: none"/>
+                <form:input path="startTime" type="time" cssStyle="display: none"/>
 
-
-
-                <form:hidden path="id" value="${match.id}" />
-                <form:hidden path="homeTeam" value="${match.homeTeam}" />
-                <form:hidden path="awayTeam" value="${match.awayTeam}" />
-                <form:hidden path="homeCourse" value="${match.homeCourse}" />
-                <form:hidden path="drawCourse" value="${match.drawCourse}" />
-                <form:hidden path="awayCourse" value="${match.awayCourse}" />
-                <form:hidden path="startDate" value="${match.startDate}" />
-                <form:hidden path="startTime" value="${match.startTime}" />
-                <form:hidden path="round" value="${match.round.id}" />
+                <form:hidden path="round" value="${match.round.id}"/>
 
 
                 <div class="row">
                     <div class="form-group col-md-6">
-                <label>Gole dla gospodarzy:
-                    <form:input path="homeGoals" type="number" min="0"/>
-                    <form:errors path="homeGoals" element="div" cssClass="error"/>
-                </label>
+                        <label>Gole dla gospodarzy:
+                            <form:input path="homeGoals" type="number" min="0"/>
+                            <form:errors path="homeGoals" element="div" cssClass="error"/>
+                        </label>
                     </div>
                     <div class="form-group col-md-6">
-                <label>Gole dla gości:
-                    <form:input path="awayGoals" type="number" min="0"/>
-                    <form:errors path="awayGoals" element="div" cssClass="error"/>
-                </label>
+                        <label>Gole dla gości:
+                            <form:input path="awayGoals" type="number" min="0"/>
+                            <form:errors path="awayGoals" element="div" cssClass="error"/>
+                        </label>
                     </div>
                 </div>
 
+                <c:if test="${not empty param.wrongHour}">
+
+                    <div class="alert alert-danger text-center" style="margin-bottom: 0px">
+                        <strong>Uwaga!</strong> Mecz się jeszcze nie zakończył.
+                    </div>
+                </c:if>
 
 
-
+            </div>
         </div>
-    </div>
 
         <div class="card text-center">
             <div class="card-body">
