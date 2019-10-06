@@ -56,9 +56,13 @@
                         <form:errors path="cashDeposit" element="div" cssClass="error"/>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="kindId">Rodzaj obstawienia - 0 gospodarze, 1 remis, 2 goście:</label>
-                        <form:input path="kindOfBet" type="number" min="0" max="2" class="form-control" id="kindId"/>
-                        <form:errors path="kindOfBet" element="div" cssClass="error"/>
+                        <label for="kindId">Kogo obstawiasz?</label>
+
+                        <form:select path="kindOfBet" class="form-control" id="kindId">
+                            <form:option value="0">${bet.match.homeTeam}</form:option>
+                            <form:option value="1">Remis</form:option>
+                            <form:option value="2">${bet.match.awayTeam}</form:option>
+                        </form:select>
                     </div>
 
 
