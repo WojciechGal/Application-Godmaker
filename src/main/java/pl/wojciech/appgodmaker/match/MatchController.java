@@ -116,6 +116,7 @@ public class MatchController {
             return "matchUp";
         }
 
+        ////////////////////////WALIDACJA CZASU///////////////////////
 
         Date dateNow = new Date();
 
@@ -131,25 +132,13 @@ public class MatchController {
 
         dateComplete.add(Calendar.HOUR_OF_DAY, 2);
 
-
-
-
-
         Date dateMatch = dateComplete.getTime();
-
-////////////////////////CZAS///////////////////////
-
 
         if (dateNow.before(dateMatch)) {
             return "redirect:/matches/bigupdate/" + match.getId() + "?wrongHour=true";
         }
 
-
-
-
-
-
-
+        /////////////////////////////////////////////////////////////////
 
         matchService.saveMatchUp(match);
         return "redirect:/matches/check/" + match.getRound().getId();
