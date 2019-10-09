@@ -39,19 +39,11 @@ public class MatchController {
     @PostMapping("/add/{idOf}")
     public String addMatch(@Valid Match match, BindingResult result) {
 
-
         if (result.hasErrors()) {
             return "match";
         }
 
-
-
-
-
-
-
-
-        ///////przeniesienie do servisu np//////////
+        ////////////////////WALIDACJA CZASU///////////////////
         Date dateNow = new Date();
 
         Calendar time = Calendar.getInstance();
@@ -67,22 +59,12 @@ public class MatchController {
 
         dateComplete.add(Calendar.HOUR_OF_DAY, -1);//żeby nie można było dodać później niz godzinę przed
 
-
-
-
-
         Date dateMatch = dateComplete.getTime();
-
-
-////////////////////////CZAS//////////////////////////
 
         if (dateNow.after(dateMatch)) {
             return "wrongHour";
         }
-        ////////////////////////////////////////////////
-
-
-
+        ///////////////////////////////////////////////////
 
         matchService.saveMatch(match);
         return "redirect:/matches/check/" + match.getRound().getId();
@@ -167,7 +149,7 @@ public class MatchController {
         return "matchList2";
     }
 
-    //    @GetMapping(value = "/all")
+//    @GetMapping(value = "/all")
 //    public String getAllMatches(Model model) {
 //        List<Match> matches = matchService.getAllMatches();
 //        model.addAttribute("matches", matches);
