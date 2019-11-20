@@ -23,16 +23,7 @@
 
 <%@include file="/WEB-INF/views/fragments/header.jspf" %>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="container">
+<div class="container mainBody">
     <div class="card text-center">
         <div class="ctr">
             <br>
