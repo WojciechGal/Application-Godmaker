@@ -56,5 +56,23 @@ header {
 }
 
 .mainBody {
-    margin-top: 11.5em;
+    margin-top: 12.5em;
+}
+
+.primaryTitle {
+    margin-top: 47px;
+    margin-bottom: 70px;
+}
+
+.secondaryTitle {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.primaryComment {
+    margin-bottom: 50px;
+}
+
+.secondaryComment {
+    margin-bottom: 58px;
 }
