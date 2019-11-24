@@ -64,15 +64,38 @@ header {
     margin-bottom: 70px;
 }
 
-.secondaryTitle {
-    margin-top: 25px;
-    margin-bottom: 25px;
+.secondaryComment {
+    margin-bottom: 58px;
 }
 
-.primaryComment {
+.up225 {
+    margin-top: 225px;
+}
+
+.up50 {
+    margin-top: 50px;
+}
+
+.up25 {
+    margin-top: 25px;
+}
+
+.down50 {
     margin-bottom: 50px;
 }
 
-.secondaryComment {
-    margin-bottom: 58px;
+.down75 {
+    margin-bottom: 75px;
+}
+
+.down25 {
+    margin-bottom: 25px;
+}
+
+.up35 {
+    margin-top: 35px;
+}
+
+.down0 {
+    margin-bottom: 0px;
 }
