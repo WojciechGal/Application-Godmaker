@@ -16,7 +16,6 @@ public class DashboardController {
     @Autowired
     UserService userService;
 
-
     @GetMapping(value = "/dashboard", produces = "text/html; charset=utf-8")
     public String dashboard(@AuthenticationPrincipal CurrentUser customUser, Model model) {
         User user = customUser.getUser();
