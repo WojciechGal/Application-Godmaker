@@ -23,9 +23,9 @@
     <div class="card text-center">
         <div class="ctr">
             <h1 class="primaryTitle">Witaj na stronie Bógmacher!</h1>
-            <h3 class="secondaryTitle">Strona dla hazardzistów o mocnych nerwach!</h3><br>
-            <p class="primaryComment">Obstawiaj mecze swoich ulubionych druzyn.</p>
-            <p class="primaryComment"> Wygrywaj ogromne pieniądze i zostań obrzydliwie bogaty.</p>
+            <h3 class="up25 down50">Strona dla hazardzistów o mocnych nerwach!</h3>
+            <p class="down50">Obstawiaj mecze swoich ulubionych druzyn.</p>
+            <p class="down50"> Wygrywaj ogromne pieniądze i zostań obrzydliwie bogaty.</p>
             <p class="secondaryComment"> Do dzieła! Rejestruj się!</p>
         </div>
     </div>
