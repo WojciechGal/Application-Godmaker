@@ -33,7 +33,7 @@
                         <label>Hasło: <input type="password" name="password"/> </label>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center" style="height:49px">
+                <div class="d-flex justify-content-center" style="height:47px">
                     <div class="form-group col-md-12 text-center">
                         <input type="submit" value="Zaloguj" class="btn btn-primary"/>
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
