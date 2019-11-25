@@ -69,29 +69,17 @@ public class UserController {
         this.userService = userService;
     }
 
-//    @GetMapping("/create-user")
-//    @ResponseBody
-//    public String createUser() {
-//        User user = new User();
-//        user.setUsername("admin1");
-//        user.setPassword("admin1");
-//        user.setEmail("admin1@pl");
-//        user.setCredit(100.00);
-//        userService.saveUser(user);
-//        return "admin";
-//    }
-
     @GetMapping(value = "/add")
     public String addUser(Model model) {
         User user = new User();
         model.addAttribute("user", user);
-        return "user";
+        return "admin/registration";
     }
 
     @PostMapping("/add")
     public String addUser(@Valid User user, BindingResult result) {
         if (result.hasErrors()) {
-            return "user";
+            return "admin/registration";
         }
 
         userService.saveUser(user);
